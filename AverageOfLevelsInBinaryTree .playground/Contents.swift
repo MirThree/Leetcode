@@ -65,7 +65,7 @@ class Solution {
         for i in 0 ..< sums.count {
             averages.append((Double(sums[i])/Double(counts[i])))
         }
-        
+
         return averages
     }
     // 深度优先
@@ -82,6 +82,56 @@ class Solution {
         }
         dfs(root?.left, level: level + 1, counts: &counts, sums: &sums)
         dfs(root?.right, level: level + 1, counts: &counts, sums: &sums)
+
+    }
+}
+class Solution1 {
+    // 广度优先
+    func averageOfLevels(_ root: TreeNode?) -> [Double] {
+        guard let tree = root else {
+            return [0]
+        }
+        var sums: Int = 0
+        var counts: Int = 0
+        var averages: [Double] = [Double(tree.val)]
+        var nextSubTree = [tree]
+        var lastSubTree = [TreeNode]()
+        
+        while nextSubTree.count > 0 {
+            counts = 0
+            sums = 0
+            lastSubTree = nextSubTree
+            nextSubTree.removeAll()
+            for node in lastSubTree {
+                if let array = add(node, counts: &counts, sums: &sums) {
+                    nextSubTree.append(contentsOf: array);
+                }
+            }
+            if counts != 0 {
+                averages.append(Double(sums)/Double(counts))
+            }
+        }
+        return averages
+    }
+    // 深度优先
+    func add(_ root: TreeNode?, counts: inout Int, sums: inout Int) ->[TreeNode]? {
+        guard let tree = root else {
+            return nil
+        }
+        var subTree: [TreeNode] = []
+
+        if let left = tree.left {
+            sums = sums + left.val
+            counts = counts + 1
+            subTree.append(left);
+        }
+        if let right = tree.right {
+            sums = sums + right.val
+            counts = counts + 1
+            subTree.append(right);
+
+        }
+        return subTree
 
     }
 }
