@@ -1,6 +1,5 @@
 import UIKit
 
-var str = "Hello, playground"
 // https://leetcode-cn.com/problems/shu-zu-zhong-zhong-fu-de-shu-zi-lcof/
 """
 找出数组中重复的数字。
