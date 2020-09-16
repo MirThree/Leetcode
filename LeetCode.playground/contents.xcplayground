@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <playground version='6.0' target-platform='ios'>
     <pages>
-        <page name='AverageOfLevelsInBinaryTree '/>
-        <page name='FindNumberIn2DArray'/>
-        <page name='FindRepeatNumber'/>
-        <page name='merge-two-sorted-lists'/>
-        <page name='ReverseList'/>
+        <page name='二叉树的层平均值'/>
+        <page name='二维数组中的查找'/>
+        <page name='找出数组中重复的数字'/>
+        <page name='合并链表'/>
+        <page name='反转一个单链表'/>
+        <page name='滑动窗口最大值'/>
+        <page name='反转二叉树'/>
+        <page name='二叉树的中序遍历'/>
+        <page name='二叉树的层序遍历'/>
+        <page name='二叉树的直径'/>
+        <page name=' 二叉树展开为链表'/>
     </pages>
 </playground>
